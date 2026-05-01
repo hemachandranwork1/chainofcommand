@@ -1,6 +1,14 @@
 node_modules/
 .env
 .env.*
+
+# Hardhat
+artifacts/
+cache/
+
+# Next.js
+.next/
+
+# misc
 dist/
 build/
-.cache/
