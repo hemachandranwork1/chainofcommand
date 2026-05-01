@@ -62,8 +62,8 @@ export default function ChaffModeButton({ realTransaction, onChaffFired }) {
             <div
               key={i}
               className={`border rounded p-1.5 text-xs ${!tx.isChaff
-                  ? "border-green-700 bg-green-900/10"
-                  : "border-green-900 bg-gray-900/30"
+                ? "border-green-700 bg-green-900/10"
+                : "border-green-900 bg-gray-900/30"
                 }`}
             >
               <div className="flex items-center justify-between">
@@ -75,19 +75,18 @@ export default function ChaffModeButton({ realTransaction, onChaffFired }) {
               <div className="text-green-800 break-all mt-0.5">
                 {tx.mockTxHash?.slice(0, 20)}...
               </div>
-
-              href={`${EXPLORER}${tx.mockTxHash}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-700 hover:text-green-500 text-xs underline"
+              <a
+                href={`${EXPLORER}${tx.mockTxHash}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-700 hover:text-green-500 text-xs underline"
               >
-              VIEW ON EXPLORER ↗
-            </a>
+                VIEW ON EXPLORER ↗
+              </a>
             </div>
-      ))}
+          ))}
+        </div>
+      )}
     </div>
-  )
-}
-    </div >
   );
 }

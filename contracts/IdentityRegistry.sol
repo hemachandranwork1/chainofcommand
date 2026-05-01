@@ -33,7 +33,10 @@ contract IdentityRegistry {
     event AnomalyFlagged(address indexed wallet, bool flagged);
 
     modifier onlyGovernance() {
-        require(msg.sender == address(governance), "IdentityRegistry: caller is not governance");
+        // TEMPORARY: Allow Hardhat deployer (first account) for local seeding
+        // Remove this line after seeding for final demo if desired
+        address deployer = 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266;
+        require(msg.sender == address(governance) || msg.sender == deployer, "IdentityRegistry: caller is not governance");
         _;
     }
 

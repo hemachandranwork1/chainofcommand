@@ -1,0 +1,234 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/hema/chainofcommand/contracts/AuditLog.sol": {
+      "lastModificationDate": 1777649488791,
+      "contentHash": "e31e32a0f61d379fc275c70ab3254344",
+      "sourceName": "contracts/AuditLog.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "AuditLog"
+      ]
+    },
+    "/home/hema/chainofcommand/contracts/CircuitBreaker.sol": {
+      "lastModificationDate": 1777545493473,
+      "contentHash": "4a49c015228d8af0b13cda1f3f54f8a9",
+      "sourceName": "contracts/CircuitBreaker.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "CircuitBreaker"
+      ]
+    },
+    "/home/hema/chainofcommand/contracts/ComponentRegistry.sol": {
+      "lastModificationDate": 1777545406943,
+      "contentHash": "dc4deeac0af5e391b806d29c9550652a",
+      "sourceName": "contracts/ComponentRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ComponentRegistry"
+      ]
+    },
+    "/home/hema/chainofcommand/contracts/GovernanceMultiSig.sol": {
+      "lastModificationDate": 1777545429593,
+      "contentHash": "281b5deb52628ea6ad646d01132a10d5",
+      "sourceName": "contracts/GovernanceMultiSig.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "GovernanceMultiSig",
+        "ICircuitBreaker",
+        "IIdentityRegistry"
+      ]
+    },
+    "/home/hema/chainofcommand/contracts/IdentityRegistry.sol": {
+      "lastModificationDate": 1777653140100,
+      "contentHash": "c9e626c94d4b8c2d02725b973b86e51b",
+      "sourceName": "contracts/IdentityRegistry.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IGovernanceMultiSig",
+        "IdentityRegistry"
+      ]
+    },
+    "/home/hema/chainofcommand/contracts/ProcurementGate.sol": {
+      "lastModificationDate": 1777649051781,
+      "contentHash": "a2d594e9f52071e3acda70ccfecffeae",
+      "sourceName": "contracts/ProcurementGate.sol",
+      "solcConfig": {
+        "version": "0.8.20",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IAuditLog",
+        "ICircuitBreaker",
+        "IComponentRegistry",
+        "IIdentityRegistry",
+        "ProcurementGate"
+      ]
+    }
+  }
+}

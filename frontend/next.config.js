@@ -29,14 +29,8 @@ const nextConfig = {
 
   images: {
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "gateway.pinata.cloud",
-      },
-      {
-        protocol: "https",
-        hostname: "ipfs.io",
-      },
+      { protocol: "https", hostname: "gateway.pinata.cloud" },
+      { protocol: "https", hostname: "ipfs.io" },
     ],
   },
 
@@ -62,7 +56,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob: https://gateway.pinata.cloud https://*.tile.openstreetmap.org https://*.basemaps.cartocdn.com",
-              "connect-src 'self' http://localhost:* ws://localhost:* https://api.pinata.cloud https://gateway.pinata.cloud https://*.supabase.co https://polygon-amoy.g.alchemy.com https://amoy.polygonscan.com",
+              "connect-src 'self' http://localhost:* http://127.0.0.1:* ws://localhost:* ws://127.0.0.1:* https://api.pinata.cloud https://gateway.pinata.cloud https://*.supabase.co https://polygon-amoy.g.alchemy.com https://amoy.polygonscan.com",
               "worker-src blob:",
               "media-src 'self' blob:",
             ].join("; "),

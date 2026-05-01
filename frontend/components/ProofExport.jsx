@@ -73,34 +73,31 @@ export default function ProofExport({ auditEvent, role }) {
               <div className="text-green-600 text-xs mt-1 break-all">
                 TX: {auditEvent.transactionHash}
               </div>
-
-              href={`${POLYGON_EXPLORER}${auditEvent.transactionHash}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-400 text-xs underline hover:text-green-300"
+              <a
+                href={`${POLYGON_EXPLORER}${auditEvent.transactionHash}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-400 text-xs underline hover:text-green-300"
               >
-              VERIFY ON POLYGON SEPOLIA EXPLORER ↗
-            </a>
-        </>
+                VERIFY ON POLYGON SEPOLIA EXPLORER ↗
+              </a>
+            </>
+          )}
+          <div className="text-green-700 text-xs mt-1">
+            This PDF is court-admissible evidence. Verifiable by anyone with internet access.
+          </div>
+        </div>
       )}
-      <div className="text-green-700 text-xs mt-1">
-        This PDF is court-admissible evidence. Verifiable by anyone with internet access.
-      </div>
-    </div>
-  )
-}
 
-{
-  status === "error" && (
-    <div className="mt-2 border border-red-600 bg-red-900/20 rounded p-2">
-      <div className="text-red-400 text-xs font-bold">⚠ EXPORT FAILED</div>
-      <div className="text-red-300 text-xs">{error}</div>
-      <button onClick={() => setStatus("idle")} className="text-red-400 text-xs underline mt-1">
-        RETRY
-      </button>
+      {status === "error" && (
+        <div className="mt-2 border border-red-600 bg-red-900/20 rounded p-2">
+          <div className="text-red-400 text-xs font-bold">⚠ EXPORT FAILED</div>
+          <div className="text-red-300 text-xs">{error}</div>
+          <button onClick={() => setStatus("idle")} className="text-red-400 text-xs underline mt-1">
+            RETRY
+          </button>
+        </div>
+      )}
     </div>
-  )
-}
-    </div >
   );
 }

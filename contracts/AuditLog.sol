@@ -53,6 +53,7 @@ contract AuditLog {
         emit ProcurementGateSet(_gate);
     }
 
+    // Fixed: moved event emission to a separate internal function to reduce stack pressure
     function addEntry(
         string calldata eventType,
         address actor,
@@ -77,6 +78,23 @@ contract AuditLog {
         entryRootHashes[index] = rootHash;
         entryCount++;
 
+        // Emit event in a separate function to keep stack clean
+        _emitLogEntry(index, eventType, actor, componentId, outcome, denialReason, anomalyFlags, locationHash, rootHash);
+
+        return index;
+    }
+
+    function _emitLogEntry(
+        uint256 index,
+        string calldata eventType,
+        address actor,
+        bytes32 componentId,
+        string calldata outcome,
+        string calldata denialReason,
+        string[] calldata anomalyFlags,
+        bytes32 locationHash,
+        bytes32 rootHash
+    ) private {
         emit LogEntryAdded(
             index,
             eventType,
@@ -90,8 +108,6 @@ contract AuditLog {
             locationHash,
             rootHash
         );
-
-        return index;
     }
 
     function getRootHash(uint256 index) external view returns (bytes32) {

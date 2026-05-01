@@ -1,0 +1,40 @@
+{
+  "soldiers": {
+    "juniorOfficer": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+    "procurementOfficer": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+    "seniorProcurementOfficer": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+    "auditor": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "commander": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+  },
+  "components": {
+    "legitimate": [
+      "0xbc559ceeebb8570ff807ad145c48c703f69c2164bbb6aed3ad5847efda1c7db2",
+      "0xe08d6b0806e9b10fd7de0523886655add28e8194d3ff5a0a8ac794ff53398a79",
+      "0x957b38abf733ab0ccfddc08266139a37ad08f3efca08aedbfc245b496be7928e",
+      "0x11631b85a9bb6b880b2e5c41f3357f13c69289de48fb43ebad43f2352268abd1",
+      "0xfa3ebde600bf67cc2a032a87757e7befb63293c55776f3b226f264f949f54886"
+    ],
+    "fake": [
+      "0xd98b3efdda6e7f9e02eff58d0a1b0d32a2ca7a6df74167d125971a8a920a0906",
+      "0x1221db40c92edf784ee82675e58041bdbfdc56383d73a7f9ada20d02a1983ef2"
+    ],
+    "cloning": "0x4ac7110edb35d625a7220fc08c139bf3d506d57162b74f6b6c65adf95f9b56d2",
+    "revokable": [
+      "0x652a92bb783430eef2749640d04a9ed56a08975c3411d3db9b52fc663739c165",
+      "0xbd91c4299939511e8dadf0ec2be59d6cb5df7e5c01b30fde82d325470ebbf5e7",
+      "0xb0351b7995884a0922ea99b05f5aba8366b63832fd2b96ce5e4e911433f1cc22"
+    ]
+  },
+  "manufacturers": {
+    "legitimate": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "compromised": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720"
+  },
+  "honeyTokenSessions": [
+    "auditor-session-honey-001",
+    "auditor-session-honey-002",
+    "auditor-session-honey-003"
+  ],
+  "compromisedDeviceToken": "DEVICE-TOKEN-COMPROMISED-ROOTED-001",
+  "vendor": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+  "base": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc"
+}

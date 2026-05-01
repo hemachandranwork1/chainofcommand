@@ -9,23 +9,33 @@ interface IIdentityRegistry {
 }
 
 interface IComponentRegistry {
+    struct Component {
+        bytes32 componentId;
+        string componentType;
+        address manufacturer;
+        uint256 manufactureDate;
+        address currentOwner;
+        uint8 categoryLevel;
+        uint256 value;
+        bytes32 hardwareRootHash;
+        string encryptedIpfsCid;
+        bool verified;
+        bool compromised;
+        bool exists;
+        bool isHoneyToken;
+    }
+
+    struct Transfer {
+        address from;
+        address to;
+        uint256 timestamp;
+        bytes32 locationHash;
+        bool verified;
+    }
+
     function getFullHistory(bytes32 componentId) external view returns (
-        tuple(
-            bytes32 componentId,
-            string componentType,
-            address manufacturer,
-            uint256 manufactureDate,
-            address currentOwner,
-            uint8 categoryLevel,
-            uint256 value,
-            bytes32 hardwareRootHash,
-            string encryptedIpfsCid,
-            bool verified,
-            bool compromised,
-            bool exists,
-            bool isHoneyToken
-        ) memory component,
-        tuple(address from, address to, uint256 timestamp, bytes32 locationHash, bool verified)[] memory history,
+        Component memory component,
+        Transfer[] memory history,
         bool hasGap
     );
 }
@@ -129,7 +139,8 @@ contract ProcurementGate {
     }
 
     function _hasSecondSignature(bytes32 componentId, address primaryOfficer) internal view returns (bool) {
-        address[] memory allMembers = new address[](0);
+        // For simplicity, we require a second signature from any address that is not primary
+        // In full governance you'd check against a list of allowed approvers.
         return secondSignatures[componentId][primaryOfficer];
     }
 
@@ -165,12 +176,8 @@ contract ProcurementGate {
             return false;
         }
 
-        // Check 5: Component history and gap
-        (
-            IComponentRegistry.component memory comp,
-            ,
-            bool hasGap
-        ) = _getComponentData(componentId);
+        // Check 5: Component data
+        (IComponentRegistry.Component memory comp, , bool hasGap) = componentRegistry.getFullHistory(componentId);
 
         if (!comp.exists) {
             _denyAndLog(officer, componentId, "COMPONENT_NOT_FOUND", anomalyFlags, locationHash);
@@ -229,14 +236,6 @@ contract ProcurementGate {
 
         emit ApprovalGranted(officer, componentId, deviceToken, block.timestamp, rootHash);
         return true;
-    }
-
-    function _getComponentData(bytes32 componentId) internal view returns (
-        IComponentRegistry.component memory comp,
-        IComponentRegistry.Transfer[] memory history,
-        bool hasGap
-    ) {
-        return componentRegistry.getFullHistory(componentId);
     }
 
     function _denyAndLog(
