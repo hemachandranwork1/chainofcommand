@@ -105,7 +105,8 @@ async function main() {
     "encrypted-ipfs-fake-001"
   );
   await fakeRegTx.wait();
-
+  //deepseek said to fuckwith this file 
+  await componentRegistry.connect(manufacturer).flagSuspicious(fake1, "Compromised for demo");
   const fakeTransfer1 = await componentRegistry.connect(manufacturer).transferOwnership(
     fake1,
     vendor.address,
@@ -121,6 +122,7 @@ async function main() {
     false
   );
   await fakeTransfer2.wait();
+  await componentRegistry.connect(manufacturer).flagSuspicious(fake1, "Demo fake component - compromised");
   console.log("Registered fake component 1: supply chain gap");
 
   const compromisedManufacturer = signers[9] || signers[0];
